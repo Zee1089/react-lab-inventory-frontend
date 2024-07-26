@@ -9,6 +9,7 @@ import SignupForm from './components/SignupForm/SignupForm';
 import SigninForm from './components/SigninForm/SigninForm';
 import ReagentList from './components/ReagentList/ReagentList';
 import ReagentDetails from './components/ReagentDetails/ReagentDetails';
+import ReagentForm from './components/ReagentForm/ReagentForm';
 
 //___Services___//
 import * as authService from '../src/services/authService'; // import the authservice
@@ -40,12 +41,12 @@ const App = () => {
 
   const handleAddReagent = async (reagentFormData) => {
     const newReagent = await reagentService.create(reagentFormData);
-    setreagents([newReagent, ...reagents]);
+    setReagents([newReagent, ...reagents]);
     // add new value to front of the array to display newest entry at the top
     navigate('/reagents');
   };
   const handleDeleteReagent = async (reagentId) => {
-    const deletedReagent = await reagentService.deletereagent(reagentId);
+    const deletedReagent = await reagentService.deleteReagent(reagentId);
     setReagents(reagents.filter((reagent) => reagent._id !== deletedReagent._id));
     navigate('/reagents');
   };
@@ -60,6 +61,7 @@ const App = () => {
             <>
               <Route path="/" element={<Dashboard user={user} />} />
               <Route path="/reagents" element={<ReagentList reagents={reagents} />} />
+              <Route path="/reagents/new" element={<ReagentForm handleAddReagent={handleAddReagent} />} />
               <Route
                 path="/reagents/:reagentId"
                 element={<ReagentDetails handleDeleteReagent={handleDeleteReagent} />}
