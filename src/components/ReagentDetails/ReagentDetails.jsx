@@ -24,16 +24,16 @@ const ReagentDetails = (props) => {
         fetchReagent();
     }, [reagentId]);
 
-    const handleAddComment = async (commentFormData) => {
-        const newComment = await reagentService.createComment(reagentId, commentFormData);
-        setReagent({ ...reagent, comments: [...reagent.comments, newComment] });
-    };
+    // const handleAddComment = async (commentFormData) => {
+    //     const newComment = await reagentService.createComment(reagentId, commentFormData);
+    //     setReagent({ ...reagent, comments: [...reagent.comments, newComment] });
+    // };
 
-    const handleDeleteComment = async (reagentId, commentId) => {
-        const deletedComment = await reagentService.deleteComment(reagentId.reagentId, commentId);
-        const newCommentsArr = reagent.comments.filter((comment) => comment._id !== commentId);
-        setReagent({ ...reagent, comments: [...newCommentsArr] });
-    };
+    // const handleDeleteComment = async (reagentId, commentId) => {
+    //     const deletedComment = await reagentService.deleteComment(reagentId.reagentId, commentId);
+    //     const newCommentsArr = reagent.comments.filter((comment) => comment._id !== commentId);
+    //     setReagent({ ...reagent, comments: [...newCommentsArr] });
+    // };
 
     if (!reagent) return <main>Loading...</main>;
     return (
@@ -88,7 +88,7 @@ const ReagentDetails = (props) => {
                     </article>
                 ))}
             </section>
-            <h2>Comments</h2>
+            <h2>Comment</h2>
             {/* <CommentForm handleAddComment={handleAddComment} /> */}
         </main>
     );

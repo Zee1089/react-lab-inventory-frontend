@@ -42,13 +42,17 @@ const App = () => {
   const handleAddReagent = async (reagentFormData) => {
     const newReagent = await reagentService.create(reagentFormData);
     setReagents([newReagent, ...reagents]);
-    // add new value to front of the array to display newest entry at the top
     navigate('/reagents');
   };
   const handleDeleteReagent = async (reagentId) => {
     const deletedReagent = await reagentService.deleteReagent(reagentId);
     setReagents(reagents.filter((reagent) => reagent._id !== deletedReagent._id));
     navigate('/reagents');
+  };
+  const handleUpdateReagent = async (reagentId, reagentFormData) => {
+    const updatedReagent = await reagentService.updateReagent(reagentId, reagentFormData);
+    setReagents(reagents.map((reagent) => (reagentId === reagent._id ? updatedReagent : reagent)));
+    navigate(`/reagents/${reagentId}`);
   };
 
 
@@ -65,6 +69,10 @@ const App = () => {
               <Route
                 path="/reagents/:reagentId"
                 element={<ReagentDetails handleDeleteReagent={handleDeleteReagent} />}
+              />
+              <Route
+                path="/reagents/:reagentId/edit"
+                element={<ReagentForm handleUpdateReagent={handleUpdateReagent} />}
               />
             </>
           ) : (
