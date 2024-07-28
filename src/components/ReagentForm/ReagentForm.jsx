@@ -80,7 +80,7 @@ const ReagentForm = (props) => {
                 <label htmlFor="expiration-input">Expiration</label>
                 <input
                     required
-                    type="number"
+                    type="date"
                     name="expiration"
                     id="expiration-input"
                     value={formData.expiration}
