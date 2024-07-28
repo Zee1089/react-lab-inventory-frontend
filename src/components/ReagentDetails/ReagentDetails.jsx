@@ -6,7 +6,7 @@ import { AuthedUserContext } from '../../App';
 import { useState, useEffect, useContext } from 'react';
 import * as reagentService from '../../services/reagentService';
 
-// import CommentForm from '../CommentForm/CommentForm';
+import CommentForm from '../CommentForm/CommentForm';
 
 const ReagentDetails = (props) => {
 
@@ -24,16 +24,17 @@ const ReagentDetails = (props) => {
         fetchReagent();
     }, [reagentId]);
 
-    // const handleAddComment = async (commentFormData) => {
-    //     const newComment = await reagentService.createComment(reagentId, commentFormData);
-    //     setReagent({ ...reagent, comments: [...reagent.comments, newComment] });
-    // };
+    const handleAddComment = async (commentFormData) => {
+        const newComment = await reagentService.createComment(reagentId, commentFormData);
+        setReagent({ ...reagent, comments: [...reagent.comments, newComment] });
+    };
 
-    // const handleDeleteComment = async (reagentId, commentId) => {
-    //     const deletedComment = await reagentService.deleteComment(reagentId.reagentId, commentId);
-    //     const newCommentsArr = reagent.comments.filter((comment) => comment._id !== commentId);
-    //     setReagent({ ...reagent, comments: [...newCommentsArr] });
-    // };
+    const handleDeleteComment = async (reagentId, commentId) => {
+        const deletedComment = await reagentService.deleteComment(reagentId, commentId);
+        console.log(deletedComment);
+        const newCommentsArr = reagent.comments.filter((comment) => comment._id !== commentId);
+        setReagent({ ...reagent, comments: newCommentsArr });
+    };
 
     if (!reagent) return <main>Loading...</main>;
     return (
@@ -77,7 +78,7 @@ const ReagentDetails = (props) => {
                                 {comment.author._id === user._id && (
                                     <>
                                         <Link to={`/reagents/${reagentId}/comments/${comment._id}/edit`}>Edit</Link>
-                                        <button onClick={() => handleDeleteComment(comment._id)}>
+                                        <button onClick={() => handleDeleteComment(reagentId, comment._id)}>
                                             Delete
                                         </button>
                                     </>
@@ -89,7 +90,7 @@ const ReagentDetails = (props) => {
                 ))}
             </section>
             <h2>Comment</h2>
-            {/* <CommentForm handleAddComment={handleAddComment} /> */}
+            <CommentForm handleAddComment={handleAddComment} />
         </main>
     );
 };

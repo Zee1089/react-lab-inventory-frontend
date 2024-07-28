@@ -10,6 +10,7 @@ import SigninForm from './components/SigninForm/SigninForm';
 import ReagentList from './components/ReagentList/ReagentList';
 import ReagentDetails from './components/ReagentDetails/ReagentDetails';
 import ReagentForm from './components/ReagentForm/ReagentForm';
+import CommentForm from './components/CommentForm/CommentForm';
 
 //___Services___//
 import * as authService from '../src/services/authService'; // import the authservice
@@ -32,8 +33,6 @@ const App = () => {
   useEffect(() => {
     const fetchAllReagents = async () => {
       const reagentsData = await reagentService.index();
-      // console.log('reagentsData:', reagentsData);
-      // Set state:
       setReagents(reagentsData);
     };
     if (user) fetchAllReagents();
@@ -73,6 +72,10 @@ const App = () => {
               <Route
                 path="/reagents/:reagentId/edit"
                 element={<ReagentForm handleUpdateReagent={handleUpdateReagent} />}
+              />
+              <Route
+                path="/reagents/:reagentId/comments/:commentId/edit"
+                element={<CommentForm />}
               />
             </>
           ) : (

@@ -68,6 +68,8 @@ const updateReagent = async (reagentId, reagentFormData) => {
     }
 };
 
+//___Comment Related Services__//
+
 const createComment = async (reagentId, commentFormData) => {
     try {
         const res = await fetch(`${BASE_URL}/${reagentId}/comments`, {

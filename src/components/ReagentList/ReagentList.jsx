@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 
 const ReagentList = (props) => {
+
     return (
         <main>
             {props.reagents.map((reagent) => (
@@ -14,7 +15,14 @@ const ReagentList = (props) => {
                             {reagent.author.username} posted on {new Date(reagent.createdAt).toLocaleDateString()}
                             </p>
                         </header>
-                        <p>{reagent.comments}</p>
+                        {/* <ul>
+                            {reagent.comments.map((comment) => (
+                                <li key={comment._id}>{comment.text}</li>
+                            ))}
+                        </ul> 
+                            // need to re-render ( refetch on Route loading ) comments when deciding to diplay
+                                // else it uses outdated data ( non-representative of actual DB )
+                        */}
                     </article>
                 </Link>
             ))}
