@@ -11,8 +11,14 @@ const NavBar = ({ handleSignout }) => {
           <ul>
             <li>Welcome, {user.username}</li>
             <li>
-              <Link to="/">Dashboard</Link>
+              <Link to="/reagents">Reagents</Link>
             </li>
+            <li>
+              <Link to="/reagents/new">New Reagent</Link>
+            </li>
+            {/* <li>
+              <Link to="/">Dashboard</Link>
+            </li> */}
             <li>
               <Link to="" onClick={handleSignout}>
                 Sign Out
