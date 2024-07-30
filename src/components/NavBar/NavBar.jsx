@@ -18,6 +18,12 @@ const NavBar = ({ handleSignout }) => {
             <li>
               <Link to="/reagents/new">New Reagent</Link>
             </li>
+            <li>
+              <Link to="/equipment">Equipment</Link>
+            </li>
+            <li>
+              <Link to="/equipment/new">New Equipment</Link>
+            </li>
             {/* <li>
               <Link to="/">Dashboard</Link>
             </li> */}

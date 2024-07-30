@@ -11,6 +11,9 @@ import ReagentList from './components/ReagentList/ReagentList';
 import ReagentDetails from './components/ReagentDetails/ReagentDetails';
 import ReagentForm from './components/ReagentForm/ReagentForm';
 import CommentForm from './components/CommentForm/CommentForm';
+// import EquipmentList from './components/EquipmentList/EquipmentList';
+// import EquipmentForm from './components/EquipmentForm/EquipmentForm';
+// import EquipmentDetails from './components/EquipmentDetails/EquipmentDetails';
 
 //___Services___//
 import * as authService from '../src/services/authService'; // import the authservice
@@ -24,6 +27,7 @@ const App = () => {
 
   const [user, setUser] = useState(authService.getUser()); // using the method from authservice
   const [reagents, setReagents] = useState([]); // created reagents state
+  // const [equipment, setEquipment] = useState([]); // created equipment state
 
   const handleSignout = () => {
     authService.signout();
@@ -57,6 +61,32 @@ const App = () => {
   };
 
 
+    // Equipment related functions, need to verify naming convention due to grammatical difference in plurals
+//_________________________________\\
+  // useEffect(() => {
+  //   const fetchAllEquipment = async () => {
+  //     const equipmentData = await equipmentService.index();
+  //     setEquipment(equipmentData);
+  //   };
+  //   if (user) fetchAllEquipment();
+  // }, [user]);
+  // const handleAddEquipment = async (equipmentFormData) => {
+  //   const newEquipment = await equipmentService.create(equipmentFormData);
+  //   setEquipment([newReagent, ...equipment]);
+  //   navigate('/equipment');
+  // };
+  // const handleDeleteEquipment = async (reagentId) => {
+  //   const deletedEquipment = await equipmentService.deleteEquipment(reagentId);
+  //   setEquipment(equipment.filter((reagent) => reagent._id !== deletedEquipment._id));
+  //   navigate('/equipment');
+  // };
+  // const handleUpdateEquipment = async (reagentId, equipmentFormData) => {
+  //   const updatedEquipment = await equipmentService.updateEquipment(reagentId, equipmentFormData);
+  //   setEquipment(equipment.map((reagent) => (reagentId === reagent._id ? updatedEquipment : reagent)));
+  //   navigate(`/equipment/${reagentId}`);
+  // };
+
+
   return (
     <>
       <AuthedUserContext.Provider value={user}>
@@ -79,6 +109,16 @@ const App = () => {
                 path="/reagents/:reagentId/comments/:commentId/edit"
                 element={<CommentForm />}
               />
+              {/* <Route path="/equipment" element={<EquipmenttList equipment={equipment} />} />
+              <Route path="/equipment/new" element={<EquipmentForm handleAddEquipment={handleAddEquipment} />} />
+              <Route
+                path="/equipment/:equipmentId"
+                element={<EquipmentDetails handleDeleteEquipment={handleDeleteEquipment} />}
+              />
+              <Route
+                path="/equipment/:equipmentId/edit"
+                element={<EquipmentForm handleUpdateEquipment={handleUpdateEquipment} />}
+              /> */}
             </>
           ) : (
             <Route path="/" element={<Landing />} />

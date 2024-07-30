@@ -24,17 +24,17 @@ const EquipmentDetails = (props) => {
         fetchEquipment();
     }, [equipmentId]);
 
-    const handleAddComment = async (commentFormData) => {
-        const newComment = await equipmentService.createComment(equipmentId, commentFormData);
-        setEquipment({ ...equipment, comments: [...equipment.comments, newComment] });
-    };
+    // const handleAddComment = async (commentFormData) => {
+    //     const newComment = await equipmentService.createComment(equipmentId, commentFormData);
+    //     setEquipment({ ...equipment, comments: [...equipment.comments, newComment] });
+    // };
 
-    const handleDeleteComment = async (equipmentId, commentId) => {
-        const deletedComment = await equipmentService.deleteComment(equipmentId, commentId);
-        console.log(deletedComment);
-        const newCommentsArr = equipment.comments.filter((comment) => comment._id !== commentId);
-        setEquipment({ ...equipment, comments: newCommentsArr });
-    };
+    // const handleDeleteComment = async (equipmentId, commentId) => {
+    //     const deletedComment = await equipmentService.deleteComment(equipmentId, commentId);
+    //     console.log(deletedComment);
+    //     const newCommentsArr = equipment.comments.filter((comment) => comment._id !== commentId);
+    //     setEquipment({ ...equipment, comments: newCommentsArr });
+    // };
 
     if (!equipment) return <main>Loading...</main>;
     return (
