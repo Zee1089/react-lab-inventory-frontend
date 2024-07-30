@@ -19,7 +19,7 @@ import CommentForm from './components/CommentForm/CommentForm';
 import * as authService from '../src/services/authService'; // import the authservice
 import * as reagentService from '../src/services/reagentService'; // created and imported reagentService for back-end requests
 
-import './App.css';
+// import './App.css';
 
 export const AuthedUserContext = createContext(null);
 
