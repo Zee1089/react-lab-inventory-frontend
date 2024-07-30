@@ -4,15 +4,16 @@ const EquipmentList = (props) => {
 
     return (
         <main>
-            {props.equipment.map((piece) => (
-                <Link key={piece._id} to={`/equipment/${piece._id}`}>
+            {props.equipments.map((equipment) => (
+                // <Link key={equipment._id} to={`/equipments/${equipment._id}`}>
+                <Link key={equipment._id} to={`/equipments/${equipment._id}`}>
                     <article>
                         <header>
                             <div>
-                                <h2>{piece.name}</h2>
+                                <h2>{equipment.name}</h2>
                             </div>
                             <p>
-                                {piece.author ? piece.author.username : '[ Unknown User ]'} posted on {new Date(piece.createdAt).toLocaleDateString()}
+                                {equipment.author ? equipment.author.username : '[ Unknown User ]'} posted on {new Date(equipment.createdAt).toLocaleDateString()}
                                 {/* Added check for author value on reagent object* */}
                             </p>
                         </header>

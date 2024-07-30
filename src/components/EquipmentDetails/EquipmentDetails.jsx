@@ -43,7 +43,7 @@ const EquipmentDetails = (props) => {
                 <h1>{equipment.category}</h1>
                 <h2>Brand: {equipment.brand}</h2>
                 <h3>Location: {equipment.location}</h3>
-                <p>Expiration: {equipment.expiration}</p>
+                <p>Maintenance Date: {new Date(equipment.maintenanceDate).toLocaleDateString()}</p>
 
                 <div>
                     <p>

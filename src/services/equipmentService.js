@@ -1,4 +1,4 @@
-const BASE_URL = `${import.meta.env.VITE_EXPRESS_BACKEND_URL}/equipment`;
+const BASE_URL = `${import.meta.env.VITE_EXPRESS_BACKEND_URL}/equipments`;
 
 const index = async () => {
     try {
@@ -122,7 +122,7 @@ export {
     create,
     deleteEquipment,
     updateEquipment,
-    createComment,
-    deleteComment,
-    updateComment,
+    // createComment,
+    // deleteComment,
+    // updateComment,
 };

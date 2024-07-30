@@ -11,13 +11,14 @@ import ReagentList from './components/ReagentList/ReagentList';
 import ReagentDetails from './components/ReagentDetails/ReagentDetails';
 import ReagentForm from './components/ReagentForm/ReagentForm';
 import CommentForm from './components/CommentForm/CommentForm';
-// import EquipmentList from './components/EquipmentList/EquipmentList';
-// import EquipmentForm from './components/EquipmentForm/EquipmentForm';
-// import EquipmentDetails from './components/EquipmentDetails/EquipmentDetails';
+import EquipmentList from './components/EquipmentList/EquipmentList';
+import EquipmentForm from './components/EquipmentForm/EquipmentForm';
+import EquipmentDetails from './components/EquipmentDetails/EquipmentDetails';
 
 //___Services___//
 import * as authService from '../src/services/authService'; // import the authservice
 import * as reagentService from '../src/services/reagentService'; // created and imported reagentService for back-end requests
+import * as equipmentService from '../src/services/equipmentService';
 
 export const AuthedUserContext = createContext(null);
 
@@ -25,7 +26,7 @@ const App = () => {
 
   const [user, setUser] = useState(authService.getUser()); // using the method from authservice
   const [reagents, setReagents] = useState([]); // created reagents state
-  // const [equipment, setEquipment] = useState([]); // created equipment state
+  const [equipments, setEquipments] = useState([]); // created equipment state
 
   const handleSignout = () => {
     authService.signout();
@@ -58,31 +59,30 @@ const App = () => {
     navigate(`/reagents/${reagentId}`);
   };
 
+  useEffect(() => {
+    const fetchAllEquipments = async () => {
+      const equipmentsData = await equipmentService.index();
+      setEquipments(equipmentsData);
+    };
+    if (user) fetchAllEquipments();
+  }, [user]);
 
-    // Equipment related functions, need to verify naming convention due to grammatical difference in plurals
-//_________________________________\\
-  // useEffect(() => {
-  //   const fetchAllEquipment = async () => {
-  //     const equipmentData = await equipmentService.index();
-  //     setEquipment(equipmentData);
-  //   };
-  //   if (user) fetchAllEquipment();
-  // }, [user]);
-  // const handleAddEquipment = async (equipmentFormData) => {
-  //   const newEquipment = await equipmentService.create(equipmentFormData);
-  //   setEquipment([newReagent, ...equipment]);
-  //   navigate('/equipment');
-  // };
-  // const handleDeleteEquipment = async (reagentId) => {
-  //   const deletedEquipment = await equipmentService.deleteEquipment(reagentId);
-  //   setEquipment(equipment.filter((reagent) => reagent._id !== deletedEquipment._id));
-  //   navigate('/equipment');
-  // };
-  // const handleUpdateEquipment = async (reagentId, equipmentFormData) => {
-  //   const updatedEquipment = await equipmentService.updateEquipment(reagentId, equipmentFormData);
-  //   setEquipment(equipment.map((reagent) => (reagentId === reagent._id ? updatedEquipment : reagent)));
-  //   navigate(`/equipment/${reagentId}`);
-  // };
+  //___Equipment Handlers___\\
+  const handleAddEquipment = async (equipmentFormData) => {
+    const newEquipments = await equipmentService.create(equipmentFormData);
+    setEquipments([newEquipments, ...equipments]);
+    navigate('/equipments');
+  };
+  const handleDeleteEquipment = async (equipmentId) => {
+    const deletedEquipments = await equipmentService.deleteEquipment(equipmentId);
+    setEquipments(equipments.filter((equipment) => equipment._id !== deletedEquipments._id));
+    navigate('/equipments');
+  };
+  const handleUpdateEquipment = async (equipmentId, equipmentFormData) => {
+    const updatedEquipments = await equipmentService.updateEquipment(equipmentId, equipmentFormData);
+    setEquipments(equipments.map((equipment) => (equipmentId === equipment._id ? updatedEquipments : equipment)));
+    navigate(`/equipments/${equipmentId}`);
+  };
 
 
   return (
@@ -107,16 +107,16 @@ const App = () => {
                 path="/reagents/:reagentId/comments/:commentId/edit"
                 element={<CommentForm />}
               />
-              {/* <Route path="/equipment" element={<EquipmenttList equipment={equipment} />} />
-              <Route path="/equipment/new" element={<EquipmentForm handleAddEquipment={handleAddEquipment} />} />
+              <Route path="/equipments" element={<EquipmentList equipments={equipments} />} />
+              <Route path="/equipments/new" element={<EquipmentForm handleAddEquipment={handleAddEquipment} />} />
               <Route
-                path="/equipment/:equipmentId"
+                path="/equipments/:equipmentId"
                 element={<EquipmentDetails handleDeleteEquipment={handleDeleteEquipment} />}
               />
               <Route
-                path="/equipment/:equipmentId/edit"
+                path="/equipments/:equipmentId/edit"
                 element={<EquipmentForm handleUpdateEquipment={handleUpdateEquipment} />}
-              /> */}
+              />
             </>
           ) : (
             <Route path="/" element={<Landing />} />

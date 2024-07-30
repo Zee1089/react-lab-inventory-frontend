@@ -83,7 +83,8 @@ const ReagentForm = (props) => {
                     type="date"
                     name="expirationDate"
                     id="expirationDate"
-                    value={formData.expirationDate}
+                    // value={formData.expirationDate}
+                    value={new Date(formData.expirationDate).toLocaleDateString()}
                     onChange={handleChange}
                 />
                 <button type="submit">SUBMIT</button>

@@ -7,11 +7,13 @@ const EquipmentForm = (props) => {
     const [formData, setFormData] = useState({
         brand: '',
         category: 'ThermoCycler',
-        location: '',
+        location: 'L808-1',
         maintenanceDate: '',
     });
 
     const { equipmentId } = useParams();
+    console.log(formData);
+    console.log(equipmentId);
 
     useEffect(() => {
         const fetchEquipment = async () => {
@@ -27,6 +29,7 @@ const EquipmentForm = (props) => {
 
     const handleSubmit = (evt) => {
         evt.preventDefault();
+        console.log(formData);
         if (equipmentId) {
             props.handleUpdateEquipment(equipmentId, formData);
         } else {
@@ -72,7 +75,7 @@ const EquipmentForm = (props) => {
                 >
                     <option value="L808-1">L808-1</option>
                     <option value="L808-2">L808-2</option>
-                    <option value="L809-1">L808-1</option>
+                    <option value="L809-1">L809-1</option>
                     <option value="LS-401">LS-401</option>
                     <option value="LS-402">LS-402</option>
                 </select>
@@ -82,7 +85,8 @@ const EquipmentForm = (props) => {
                     type="date"
                     name="maintenanceDate"
                     id="maintenanceDate"
-                    value={formData.maintenanceDate}
+                    // value={formData.maintenanceDate}
+                    value={new Date(formData.maintenanceDate).toLocaleDateString()}
                     onChange={handleChange}
                 />
                 <button type="submit">SUBMIT</button>
