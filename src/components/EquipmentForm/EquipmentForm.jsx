@@ -86,7 +86,7 @@ const EquipmentForm = (props) => {
                     name="maintenanceDate"
                     id="maintenanceDate"
                     // value={formData.maintenanceDate}
-                    value={new Date(formData.maintenanceDate).toLocaleDateString()}
+                    value={new Date(formData.maintenanceDate.split('-')).toLocaleDateString()}
                     onChange={handleChange}
                 />
                 <button type="submit">SUBMIT</button>
