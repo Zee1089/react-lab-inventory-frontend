@@ -20,6 +20,8 @@ import * as authService from '../src/services/authService'; // import the authse
 import * as reagentService from '../src/services/reagentService'; // created and imported reagentService for back-end requests
 import * as equipmentService from '../src/services/equipmentService';
 
+import './App.css';
+
 export const AuthedUserContext = createContext(null);
 
 const App = () => {
