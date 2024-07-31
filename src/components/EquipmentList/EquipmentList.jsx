@@ -9,7 +9,7 @@ const EquipmentList = (props) => {
                     <article>
                         <header>
                             <div>
-                                <h2>{equipment.name}</h2>
+                                <h2>{equipment.category}</h2>
                             </div>
                             <p>
                                 {equipment.author ? equipment.author.username : '[ Unknown User ]'} posted on {new Date(equipment.createdAt).toLocaleDateString()}
