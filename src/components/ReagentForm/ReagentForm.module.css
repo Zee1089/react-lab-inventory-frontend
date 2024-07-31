@@ -1,0 +1,22 @@
+input, select {
+    color: white;
+    background: black;
+}
+
+.h1 {
+    border-bottom: .5rem solid black;
+    width: 80%;
+}
+
+.form {
+    border: .2rem double black;
+    border-top: none;
+    /* border-top: .1rem ridge red; */
+    border-radius: 0 0 1rem 1rem;
+    width: 60%;
+    padding: 1rem;
+}
+
+hr {
+    width: 60%;
+}

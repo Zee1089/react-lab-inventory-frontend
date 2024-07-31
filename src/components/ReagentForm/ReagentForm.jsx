@@ -2,6 +2,8 @@ import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import * as reagentService from '../../services/reagentService';
 
+import styles from './ReagentForm.module.css';
+
 const ReagentForm = (props) => {
 
     const [formData, setFormData] = useState({
@@ -36,9 +38,10 @@ const ReagentForm = (props) => {
     };
 
     return (
-        <main>
-            <h1>{reagentId ? 'Edit Reagent' : 'Add Reagent'}</h1>
-            <form onSubmit={handleSubmit}>
+        <main className={styles.main}>
+            <h1 className={styles.h1}>{reagentId ? 'Edit Reagent' : 'Add Reagent'}</h1>
+            <hr />
+            <form onSubmit={handleSubmit} className={styles.form}>
                 <label htmlFor="name-input">Name</label>
                 <input
                     required
