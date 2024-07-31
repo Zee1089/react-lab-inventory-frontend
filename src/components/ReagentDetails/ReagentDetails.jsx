@@ -44,8 +44,8 @@ const ReagentDetails = (props) => {
                 <p>{reagent.category.toUpperCase()}</p>
                 <h2>Brand: {reagent.brand}</h2>
                 <h2>Quantity: {reagent.quantity}</h2>
-                <p>Expiration: {reagent.expiration}</p>
-
+                <p>Expiration: {new Date(reagent.expirationDate).toLocaleDateString()}</p> 
+                    {/* fixed error in property reference naming and used Date method to convert to more readable format */}
                 <div>
                     <p>
                         {reagent.author.username} posted on {new Date(reagent.createdAt).toLocaleDateString()}

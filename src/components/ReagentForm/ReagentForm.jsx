@@ -9,7 +9,7 @@ const ReagentForm = (props) => {
         brand: '',
         quantity: 0,
         category: 'Organic',
-        expiration: '',
+        expirationDate: '',
     });
 
     const { reagentId } = useParams();
@@ -77,13 +77,14 @@ const ReagentForm = (props) => {
                     <option value="Organic">Organic</option>
                     <option value="Inorganic">Inorganic</option>
                 </select>
-                <label htmlFor="expiration-input">Expiration</label>
+                <label htmlFor="expirationDate">Expiration</label>
                 <input
                     required
                     type="date"
-                    name="expiration"
-                    id="expiration-input"
-                    value={formData.expiration}
+                    name="expirationDate"
+                    id="expirationDate"
+                    // value={formData.expirationDate}
+                    value={new Date(formData.expirationDate).toLocaleDateString()}
                     onChange={handleChange}
                 />
                 <button type="submit">SUBMIT</button>
