@@ -52,4 +52,5 @@ const NavBar = ({ handleSignout }) => {
     </>
   );
 };
+
 export default NavBar;

@@ -40,7 +40,6 @@ const ReagentForm = (props) => {
     return (
         <main className={styles.main}>
             <h1 className={styles.h1}>{reagentId ? 'Edit Reagent' : 'Add Reagent'}</h1>
-            {/* <hr /> */}
             <form onSubmit={handleSubmit} className={styles.form}>
                 <div className={styles.beak}></div>
                 <label htmlFor="name-input">Name</label>
@@ -87,8 +86,7 @@ const ReagentForm = (props) => {
                     type="date"
                     name="expirationDate"
                     id="expirationDate"
-                    // value={formData.expirationDate}
-                    value={new Date(formData.expirationDate).toLocaleDateString()}
+                    value={new Date(formData.expirationDate.split('-')).toLocaleDateString()}
                     onChange={handleChange}
                 />
                 <button type="submit">SUBMIT</button>

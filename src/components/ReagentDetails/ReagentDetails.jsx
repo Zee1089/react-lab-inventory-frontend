@@ -1,5 +1,3 @@
-// src/components/reagentDetails/reagentDetails.jsx
-
 import { useParams } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import { AuthedUserContext } from '../../App';
@@ -31,7 +29,6 @@ const ReagentDetails = (props) => {
 
     const handleDeleteComment = async (reagentId, commentId) => {
         const deletedComment = await reagentService.deleteComment(reagentId, commentId);
-        console.log(deletedComment);
         const newCommentsArr = reagent.comments.filter((comment) => comment._id !== commentId);
         setReagent({ ...reagent, comments: newCommentsArr });
     };
@@ -45,7 +42,6 @@ const ReagentDetails = (props) => {
                 <h2>Brand: {reagent.brand}</h2>
                 <h2>Quantity: {reagent.quantity}</h2>
                 <p>Expiration: {new Date(reagent.expirationDate).toLocaleDateString()}</p> 
-                    {/* fixed error in property reference naming and used Date method to convert to more readable format */}
                 <div>
                     <p>
                         {reagent.author.username} posted on {new Date(reagent.createdAt).toLocaleDateString()}

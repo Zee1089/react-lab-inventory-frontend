@@ -15,17 +15,8 @@ const ReagentList = (props) => {
                             </div>
                             <p>
                             {reagent.author ? reagent.author.username : '[ Unknown User ]'} posted on {new Date(reagent.createdAt).toLocaleDateString()}
-                                {/* Added check for author value on reagent object */}
                             </p>
-                        </header>
-                        {/* <ul>
-                            {reagent.comments.map((comment) => (
-                                <li key={comment._id}>{comment.text}</li>
-                            ))}
-                        </ul>  */}
-                            {/* // need to re-render ( refetch on Route loading ) comments when deciding to diplay
-                                // else it uses outdated data ( non-representative of actual DB ) */}
-                       
+                        </header>                       
                     </article>
                 </Link>
             ))}
