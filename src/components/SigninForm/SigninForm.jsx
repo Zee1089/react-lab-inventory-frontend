@@ -31,12 +31,16 @@ const SigninForm = (props) => {
   };
 
   return (
-    <main>
+    <main className='sign'>
       <h1>Log In</h1>
-      <p>{message}</p>
+      {
+        message[0] ? 
+        <p>{message}</p>
+        : <p style={{background: "transparent", color: "transparent"}}>Invisible Ink</p>
+      }
       <form autoComplete="off" onSubmit={handleSubmit}>
         <div>
-          <label htmlFor="email">Username:</label>
+          <label htmlFor="email">Username</label>
           <input
             type="text"
             autoComplete="off"
@@ -47,7 +51,7 @@ const SigninForm = (props) => {
           />
         </div>
         <div>
-          <label htmlFor="password">Password:</label>
+          <label htmlFor="password">Password</label>
           <input
             type="password"
             autoComplete="off"
@@ -57,7 +61,7 @@ const SigninForm = (props) => {
             onChange={handleChange}
           />
         </div>
-        <div>
+        <div className='button-container'>
           <button>Log In</button>
           <Link to="/">
             <button>Cancel</button>

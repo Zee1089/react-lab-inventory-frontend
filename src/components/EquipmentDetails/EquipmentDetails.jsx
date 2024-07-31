@@ -4,6 +4,8 @@ import { AuthedUserContext } from '../../App';
 import { useState, useEffect, useContext } from 'react';
 import * as equipmentService from '../../services/equipmentService';
 
+import styles from '../ReagentDetails/ReagentDetails.module.css';
+
 const EquipmentDetails = (props) => {
 
     const [equipment, setEquipment] = useState(null);
@@ -24,9 +26,9 @@ const EquipmentDetails = (props) => {
     return (
         <main>
             <header>
-                <h1>{equipment.category}</h1>
-                <h2>Brand: {equipment.brand}</h2>
-                <h3>Location: {equipment.location}</h3>
+                <h1 className={styles.h1}>{equipment.category}</h1>
+                <h2 className={styles.h2}>Brand: <span className={styles.span}>{equipment.brand}</span></h2>
+                <h3 className={styles.h2}>Location: <span className={styles.span}>{equipment.location}</span></h3>
                 <p>Maintenance Date: {new Date(equipment.maintenanceDate).toLocaleDateString()}</p>
 
                 <div>
@@ -35,10 +37,12 @@ const EquipmentDetails = (props) => {
                     </p>
                     {equipment.author._id === user._id && (
                         <>
-                            <Link to={`/equipments/${equipmentId}/edit`}>Edit</Link>
-                            <button onClick={() => props.handleDeleteEquipment(equipmentId)}>
-                                Delete
-                            </button>
+                            <section className={styles.buttons}>
+                                <Link to={`/equipments/${equipmentId}/edit`} className={styles.edit}>Edit</Link>
+                                <button onClick={() => props.handleDeleteEquipment(equipmentId)} className={styles.delete}>
+                                    Delete
+                                </button>
+                            </section>
                         </>
                     )}
                 </div>

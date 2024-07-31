@@ -6,6 +6,8 @@ import * as reagentService from '../../services/reagentService';
 
 import CommentForm from '../CommentForm/CommentForm';
 
+import styles from './ReagentDetails.module.css';
+
 const ReagentDetails = (props) => {
 
     const [reagent, setReagent] = useState(null);
@@ -37,21 +39,23 @@ const ReagentDetails = (props) => {
     return (
         <main>
             <header>
-                <h1>{reagent.name}</h1>
+                <h1 className={styles.h1}>{reagent.name}</h1>
                 <p>{reagent.category.toUpperCase()}</p>
-                <h2>Brand: {reagent.brand}</h2>
-                <h2>Quantity: {reagent.quantity}</h2>
-                <p>Expiration: {new Date(reagent.expirationDate).toLocaleDateString()}</p> 
-                <div>
-                    <p>
+                <h2 className={styles.h2}>Brand: <span className={styles.span}>{reagent.brand}</span></h2>
+                <h2 className={styles.h2}>Quantity: <span className={styles.span}>{reagent.quantity}</span></h2>
+                <p>Expiration: {new Date(reagent.expirationDate).toLocaleDateString()}</p>
+                <div className={styles.div}>
+                    <p className={styles.p}>
                         {reagent.author.username} posted on {new Date(reagent.createdAt).toLocaleDateString()}
                     </p>
                     {reagent.author._id === user._id && (
                         <>
-                            <Link to={`/reagents/${reagentId}/edit`}>Edit</Link>
-                            <button onClick={() => props.handleDeleteReagent(reagentId)}>
-                                Delete
-                            </button>
+                            <section className={styles.buttons}>
+                                <Link to={`/reagents/${reagentId}/edit`} className={styles.edit}>Edit</Link>
+                                <button onClick={() => props.handleDeleteReagent(reagentId)} className={styles.delete}>
+                                    Delete
+                                </button>
+                            </section>
                         </>
                     )}
                 </div>
@@ -64,24 +68,25 @@ const ReagentDetails = (props) => {
                 {!reagent.comments.length && <p>There are no comments.</p>}
 
                 {reagent.comments.map((comment) => (
-                    <article key={comment._id}>
+                    <article key={comment._id} className={styles.article}>
                         <header>
-                            <div>
-                                <p>
-                                    {comment.author.username} posted on
-                                    {new Date(comment.createdAt).toLocaleDateString()}
+                            <div className={styles.div}>
+                                <p className={styles.commentP}>
+                                    {comment.author.username} posted on {new Date(comment.createdAt).toLocaleDateString()}
                                 </p>
                                 {comment.author._id === user._id && (
                                     <>
-                                        <Link to={`/reagents/${reagentId}/comments/${comment._id}/edit`}>Edit</Link>
-                                        <button onClick={() => handleDeleteComment(reagentId, comment._id)}>
-                                            Delete
-                                        </button>
+                                        <section className={styles.buttons}>
+                                            <Link to={`/reagents/${reagentId}/comments/${comment._id}/edit`} className={styles.edit}>Edit</Link>
+                                            <button onClick={() => handleDeleteComment(reagentId, comment._id)} className={styles.delete}>
+                                                Delete
+                                            </button>
+                                        </section>
                                     </>
                                 )}
                             </div>
                         </header>
-                        <p>{comment.text}</p>
+                        <p className={styles.commentP}>{comment.text}</p>
                     </article>
                 ))}
             </section>

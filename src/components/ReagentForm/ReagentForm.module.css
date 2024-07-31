@@ -13,13 +13,6 @@ input:focus, select:focus {
     outline: .2rem solid blue;
 }
 
-button {
-    margin: 1dvh 0;
-    background: #15b046;
-    padding: 1rem;
-    color: black;
-}
-
 .main {
     padding-top: 0;
     position: relative;

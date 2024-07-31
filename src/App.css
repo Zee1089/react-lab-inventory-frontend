@@ -11,6 +11,10 @@
 
 #root {
     outline: none;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
 }
 
 body {
@@ -24,6 +28,8 @@ body {
 
 main {
     background: white;
+    margin: 1rem;
+    min-width: 90dvw;
 }
 
 a {
@@ -35,7 +41,7 @@ a {
 ul {
     list-style-type: none;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
     width: 70dvw;
     margin: 1dvh 0;
     padding: 0;
@@ -64,7 +70,54 @@ label::after {
     content: ':';
 }
 
-button:hover {
+button {
+    margin: .5rem 0;
+    background: #15b046;
+    padding: 1rem;
+    color: black;
+    border: .15rem outset black;
+    width: 6rem;
+    height: 3.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+button:enabled:hover {
     filter: brightness(120%);
     cursor: pointer;
+    outline: .2rem solid black;
+}
+
+button:disabled {
+    background: gray;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    align-self: center;
+}
+
+.button-container> :first-child {
+    height: 3.5rem;
+    margin: 1rem;
+}
+
+div,
+p {
+    border-radius: 5px;
+    padding: .5rem;
+    text-align: center;
+    outline: .15rem outset black;
+}
+
+p {
+    color: black;
+    margin: 1rem;
+    background: #bbb8;
+}
+
+.sign > form > div, .sign > p {
+    outline: none;
 }

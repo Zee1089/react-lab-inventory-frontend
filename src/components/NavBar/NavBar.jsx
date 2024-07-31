@@ -41,10 +41,10 @@ const NavBar = ({ handleSignout }) => {
         <nav>
           <ul>
             <li className={styles.li}>
-              <Link to="/signin"><span className={styles.span}>"Sign In</span></Link>
+              <Link to="/signin"><span className={styles.span}>Sign In</span></Link>
             </li>
             <li className={styles.li}>
-              <Link to="/signup"><span className={styles.span}>"Sign Up</span></Link>
+              <Link to="/signup"><span className={styles.span}>Sign Up</span></Link>
             </li>
           </ul>
         </nav>

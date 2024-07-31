@@ -8,7 +8,7 @@ const ReagentForm = (props) => {
 
     const [formData, setFormData] = useState({
         name: '',
-        brand: '',
+        brand: 'ACME',
         quantity: 0,
         category: 'Organic',
         expirationDate: '',

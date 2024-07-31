@@ -5,16 +5,13 @@ import * as equipmentService from '../../services/equipmentService';
 const EquipmentForm = (props) => {
 
     const [formData, setFormData] = useState({
-        brand: '',
+        brand: 'ACME',
         category: 'ThermoCycler',
         location: 'L808-1',
         maintenanceDate: '',
     });
 
     const { equipmentId } = useParams();
-    console.log(formData);
-    console.log(equipmentId);
-
     useEffect(() => {
         const fetchEquipment = async () => {
             const equipmentData = await equipmentService.show(equipmentId);

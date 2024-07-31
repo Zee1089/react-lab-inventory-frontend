@@ -37,12 +37,16 @@ const SignupForm = (props) => {
   };
 
   return (
-    <main>
+    <main className='sign'>
       <h1>Sign Up</h1>
-      <p>{message}</p>
+      {
+        message[0] ? 
+        <p>{message}</p>
+        : <p style={{background: "transparent", color: "transparent"}}>Invisible Ink</p>
+      }
       <form onSubmit={handleSubmit}>
         <div>
-          <label htmlFor="username">Username:</label>
+          <label htmlFor="username">Username</label>
           <input
             type="text"
             id="name"
@@ -52,7 +56,7 @@ const SignupForm = (props) => {
           />
         </div>
         <div>
-          <label htmlFor="password">Password:</label>
+          <label htmlFor="password">Password</label>
           <input
             type="password"
             id="password"
@@ -62,7 +66,7 @@ const SignupForm = (props) => {
           />
         </div>
         <div>
-          <label htmlFor="confirm">Confirm Password:</label>
+          <label htmlFor="confirm">Confirm Password</label>
           <input
             type="password"
             id="confirm"
@@ -71,7 +75,7 @@ const SignupForm = (props) => {
             onChange={handleChange}
           />
         </div>
-        <div>
+        <div className='button-container'>
           <button disabled={isFormInvalid()}>Sign Up</button>
           <Link to="/">
             <button>Cancel</button>
