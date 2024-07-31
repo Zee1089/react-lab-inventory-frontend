@@ -6,8 +6,6 @@ import { AuthedUserContext } from '../../App';
 import { useState, useEffect, useContext } from 'react';
 import * as equipmentService from '../../services/equipmentService';
 
-// import CommentForm from '../CommentForm/CommentForm';
-
 const EquipmentDetails = (props) => {
 
     const [equipment, setEquipment] = useState(null);
@@ -23,18 +21,6 @@ const EquipmentDetails = (props) => {
         };
         fetchEquipment();
     }, [equipmentId]);
-
-    // const handleAddComment = async (commentFormData) => {
-    //     const newComment = await equipmentService.createComment(equipmentId, commentFormData);
-    //     setEquipment({ ...equipment, comments: [...equipment.comments, newComment] });
-    // };
-
-    // const handleDeleteComment = async (equipmentId, commentId) => {
-    //     const deletedComment = await equipmentService.deleteComment(equipmentId, commentId);
-    //     console.log(deletedComment);
-    //     const newCommentsArr = equipment.comments.filter((comment) => comment._id !== commentId);
-    //     setEquipment({ ...equipment, comments: newCommentsArr });
-    // };
 
     if (!equipment) return <main>Loading...</main>;
     return (
@@ -59,36 +45,6 @@ const EquipmentDetails = (props) => {
                     )}
                 </div>
             </header>
-
-            {/* <section>
-                <h2>Comments</h2>
-
-                {!equipment.comments.length && <p>There are no comments.</p>}
-
-                {equipment.comments.map((comment) => (
-                    <article key={comment._id}>
-                        <header>
-                            <div>
-                                <p>
-                                    {comment.author.username} posted on
-                                    {new Date(comment.createdAt).toLocaleDateString()}
-                                </p>
-                                {comment.author._id === user._id && (
-                                    <>
-                                        <Link to={`/equipments/${equipmentId}/comments/${comment._id}/edit`}>Edit</Link>
-                                        <button onClick={() => handleDeleteComment(equipmentId, comment._id)}>
-                                            Delete
-                                        </button>
-                                    </>
-                                )}
-                            </div>
-                        </header>
-                        <p>{comment.text}</p>
-                    </article>
-                ))}
-            </section>
-            <h2>Comment</h2>
-            <CommentForm handleAddComment={handleAddComment} /> */}
         </main>
     );
 };
