@@ -1,5 +1,7 @@
 import { Link } from 'react-router-dom';
 
+import styles from './ReagentList.module.css';
+
 const ReagentList = (props) => {
     
     return (
@@ -8,7 +10,7 @@ const ReagentList = (props) => {
                 <Link key={reagent._id} to={`/reagents/${reagent._id}`}>
                     <article>
                         <header>
-                            <div>
+                            <div className={styles.div}>
                                 <h2>{reagent.name}</h2>
                             </div>
                             <p>

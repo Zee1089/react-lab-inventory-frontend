@@ -40,8 +40,9 @@ const ReagentForm = (props) => {
     return (
         <main className={styles.main}>
             <h1 className={styles.h1}>{reagentId ? 'Edit Reagent' : 'Add Reagent'}</h1>
-            <hr />
+            {/* <hr /> */}
             <form onSubmit={handleSubmit} className={styles.form}>
+                <div className={styles.beak}></div>
                 <label htmlFor="name-input">Name</label>
                 <input
                     required

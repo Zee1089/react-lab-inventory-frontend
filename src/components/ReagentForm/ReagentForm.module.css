@@ -1,22 +1,64 @@
 input, select {
     color: white;
     background: black;
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    padding: .4rem 1rem;
+    font-size: 1rem;
+}
+
+input:focus, select:focus {
+    filter: invert(100%);
+    outline: .2rem solid blue;
+}
+
+button {
+    margin: 1dvh 0;
+    background: #15b046;
+    padding: 1rem;
+    color: black;
+}
+
+.main {
+    padding-top: 0;
+    position: relative;
+    z-index: 1;
 }
 
 .h1 {
-    border-bottom: .5rem solid black;
-    width: 80%;
+    border-bottom: .2rem double black;
+    width: 40%;
+    margin: 1rem;
 }
 
 .form {
     border: .2rem double black;
-    border-top: none;
+    border-top: .2rem double black;;
     /* border-top: .1rem ridge red; */
-    border-radius: 0 0 1rem 1rem;
+    border-radius: .3rem .3rem 1rem 1rem;
     width: 60%;
     padding: 1rem;
+    position: relative;
+    z-index: -1;
+    max-width: 17.5rem;
+    background: linear-gradient(#d3d3d359 40%, #00aeff78 45%)
 }
 
-hr {
+/* hr {
     width: 60%;
+} */
+
+.beak {
+    position: relative;
+    left: -8.4rem;
+    top: -.4rem;
+    background: transparent;
+    border: .2rem double black;
+    border-top: 1rem double transparent;
+    border-right: 1rem double transparent;
+    outline: none;
+    width: 3.3rem;
+    rotate: 60deg;
+    z-index: -1;
 }

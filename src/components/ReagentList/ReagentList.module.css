@@ -1,0 +1,29 @@
+.div {
+    background: #bbb8;
+}
+
+article {
+    box-shadow: .3rem .2rem 1rem black;
+    padding: 1rem;
+    background: conic-gradient(from 45deg at 72% 120%, gray, beige);
+}
+
+article:hover {
+    filter: brightness(110%);
+    box-shadow: 0 0 4rem black;
+    outline: .3rem solid white;
+}
+
+div,
+p {
+    border-radius: 5px;
+    padding: .5rem;
+    text-align: center;
+    outline: .15rem outset black;
+}
+
+p {
+    color: black;
+    margin: 1rem;
+    background: #bbb8;
+}
