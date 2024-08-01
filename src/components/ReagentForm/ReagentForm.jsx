@@ -28,7 +28,6 @@ const ReagentForm = (props) => {
 
     const handleSubmit = (evt) => {
         evt.preventDefault();
-        console.log(formData);
         if (reagentId) {
             props.handleUpdateReagent(reagentId, formData);
         } else {
@@ -84,7 +83,8 @@ const ReagentForm = (props) => {
                     type="date"
                     name="expirationDate"
                     id="expirationDate"
-                    value={formData.expirationDate ? formData.expirationDate.slice(0, 10) : new Date().toLocaleDateString()}
+                    // value={formData.expirationDate}
+                    value={new Date(formData.expirationDate).toLocaleDateString()}
                     onChange={handleChange}
                 />
                 <button type="submit">SUBMIT</button>
