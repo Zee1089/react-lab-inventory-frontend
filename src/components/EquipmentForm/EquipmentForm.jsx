@@ -2,6 +2,8 @@ import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import * as equipmentService from '../../services/equipmentService';
 
+import styles from './EquipmentForm.module.css';
+
 const EquipmentForm = (props) => {
 
     const [formData, setFormData] = useState({
@@ -36,7 +38,7 @@ const EquipmentForm = (props) => {
 
     return (
         <main>
-            <h1>{equipmentId ? 'Edit Equipment' : 'Add Equipment'}</h1>
+            <h1 className={styles.h1}>{equipmentId ? 'Edit Equipment' : 'Add Equipment'}</h1>
             <form onSubmit={handleSubmit}>
                 <label htmlFor="category-input">Category</label>
                 <select

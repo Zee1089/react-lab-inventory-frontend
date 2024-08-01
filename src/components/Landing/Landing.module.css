@@ -1,0 +1,62 @@
+.landingMain {
+    height: 35rem;
+}
+
+.landingMain > div,
+.landingMain > div > div,
+.landingMain > div > div > div{
+    outline: none;
+}
+
+.landingH1 {
+    font-size: 3rem;
+    margin: 1rem;
+}
+
+.landingH2 {
+    font-style: italic;
+    margin-bottom: 1rem;
+}
+
+.link {
+    color: blue;
+}
+
+.flaskContainer {
+    rotate: -45deg;
+}
+
+.flask {
+    position: relative;
+    translate: 0 6rem;
+    z-index: 1;
+}
+
+.flaskBody {
+    width: 10rem;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    border: .2rem double black;
+    background: linear-gradient(45deg, turquoise 50%, white 61%);
+}
+
+.flaskHead {
+    position: relative;
+    height: 6rem;
+    aspect-ratio: .4;
+    border: .2rem double black;
+    border-top: 1rem solid #ffb700;
+    border-radius: .2rem;
+    translate: 4.2rem -9rem;
+    z-index: 0;
+}
+
+.wavy {
+    display: block;
+    position: relative;
+    rotate: 45deg;
+    translate: -1rem 2.8rem;
+    text-decoration: overline wavy turquoise;
+    font-size: 3.15rem;
+    color: transparent;
+}
