@@ -15,7 +15,7 @@ Not spreadsheets, [ ...spread operator ]
 [App link](<www.placeholder-app-link.com>)
 
 ## Attributions  
-- [Link Text](URL)
+- [Responsive Navbar in React using React Router | Beginner Tutorial](https://www.youtube.com/watch?v=17l6AOc8s10)
 
 ## Technologies Used  
 HTML  
