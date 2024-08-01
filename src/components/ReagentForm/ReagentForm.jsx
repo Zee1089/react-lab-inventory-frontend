@@ -61,6 +61,7 @@ const ReagentForm = (props) => {
                 <input
                     required
                     type="number"
+                    min={0}
                     name="quantity"
                     id="quantity-input"
                     value={formData.quantity}
