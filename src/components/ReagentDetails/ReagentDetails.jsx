@@ -41,10 +41,10 @@ const ReagentDetails = (props) => {
                 <p>{reagent.category.toUpperCase()}</p>
                 <h2>Brand: {reagent.brand}</h2>
                 <h2>Quantity: {reagent.quantity}</h2>
-                <p>Expiration: {new Date(reagent.expirationDate).toLocaleDateString()}</p> 
+                <p>Expiration: {reagent.expirationDate.slice(0, 10)}</p> 
                 <div>
                     <p>
-                        {reagent.author.username} posted on {new Date(reagent.createdAt).toLocaleDateString()}
+                        {reagent.author.username} posted on {new Date(reagent.createdAt).toLocaleDateString().slice(0, 10)}
                     </p>
                     {reagent.author._id === user._id && (
                         <>

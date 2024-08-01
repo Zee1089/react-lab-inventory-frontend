@@ -17,6 +17,9 @@ const ReagentForm = (props) => {
     useEffect(() => {
         const fetchReagent = async () => {
             const reagentData = await reagentService.show(reagentId);
+            console.log(new Date(reagentData.expirationDate));
+            console.log(new Date(reagentData.expirationDate).toLocaleDateString().split('-').join(' '));
+            console.log(new Date(reagentData.expirationDate).toLocaleDateString().split('-'));
             setFormData(reagentData);
         };
         if (reagentId) fetchReagent();
@@ -28,6 +31,7 @@ const ReagentForm = (props) => {
 
     const handleSubmit = (evt) => {
         evt.preventDefault();
+        console.log(formData);
         if (reagentId) {
             props.handleUpdateReagent(reagentId, formData);
         } else {
@@ -83,7 +87,7 @@ const ReagentForm = (props) => {
                     type="date"
                     name="expirationDate"
                     id="expirationDate"
-                    value={new Date(formData.expirationDate.split('-')).toLocaleDateString()}
+                    value={formData.expirationDate ? formData.expirationDate : new Date(formData.expirationDate).toLocaleDateString()}
                     onChange={handleChange}
                 />
                 <button type="submit">SUBMIT</button>

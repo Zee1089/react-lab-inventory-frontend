@@ -12,8 +12,6 @@ const EquipmentForm = (props) => {
     });
 
     const { equipmentId } = useParams();
-    console.log(formData);
-    console.log(equipmentId);
 
     useEffect(() => {
         const fetchEquipment = async () => {
