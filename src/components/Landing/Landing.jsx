@@ -6,7 +6,8 @@ const Landing = () => {
   return (
     <main className={styles.landingMain}>
       <h1 className={styles.landingH1}>Welcome to Flask</h1>
-      <h2 className={styles.landingH2}>A laboratory inventory management system </h2>
+      <h2 className={styles.landingH2}>A laboratory inventory management system</h2>
+      <p className={styles.slogan}>Science: Just writing stuff down.</p>
       <h3>
         Please
         <Link to="/signin"><span className={styles.link}> Sign In</span></Link> or

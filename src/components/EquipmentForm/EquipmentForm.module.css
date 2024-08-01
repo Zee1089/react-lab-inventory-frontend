@@ -3,3 +3,50 @@
     width: 40%;
     margin: 1rem;
 }
+
+.centrifuge {
+    border: .2rem outset black;
+    padding: 2rem 7rem;
+    border-radius: 100rem 100rem 0 0;
+    background: linear-gradient(#1a53ff 40%, white 40%);
+}
+
+.equipmentForm {
+    transition: transform cubic-bezier(1, .22, 0.22, 1) 3s;
+    transition-delay: .5s;
+    position: relative;
+    z-index: 0;
+}
+
+.equipmentForm:active {
+    transform: rotateY(3600deg);
+}
+
+.equipmentForm>label:first-of-type {
+    color: white;
+}
+
+.equipmentForm>label:nth-of-type(2) {
+    color: white;
+}
+
+.spinBtn {
+    background: black;
+    border: .2rem solid green;
+    border-radius: 50%;
+    aspect-ratio: 1;
+    padding: .2rem;
+    display: grid;
+    place-items: center;
+}
+
+.spinBtn:hover {
+    background: white;
+    position: relative;
+    z-index: 2;
+}
+
+.spinBtn:active {
+    background: green;
+    color: white;
+}

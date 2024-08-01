@@ -64,7 +64,7 @@ const SigninForm = (props) => {
         <div className='button-container'>
           <button>Log In</button>
           <Link to="/">
-            <button>Cancel</button>
+            <button className='cancel-btn'>Cancel</button>
           </Link>
         </div>
       </form>

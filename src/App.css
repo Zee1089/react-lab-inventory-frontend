@@ -104,6 +104,10 @@ button:disabled {
     margin: 1rem;
 }
 
+.cancel-btn {
+    background: rgb(135, 0, 0);
+}
+
 div,
 p {
     border-radius: 5px;
