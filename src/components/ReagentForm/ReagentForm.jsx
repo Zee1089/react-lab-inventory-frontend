@@ -11,7 +11,7 @@ const ReagentForm = (props) => {
         brand: 'ACME',
         quantity: 0,
         category: 'Organic',
-        expirationDate: '',
+        expirationDate: new Date().toLocaleDateString(),
     });
 
     const { reagentId } = useParams();

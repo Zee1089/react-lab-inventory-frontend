@@ -29,11 +29,11 @@ const EquipmentDetails = (props) => {
                 <h1 className={styles.h1}>{equipment.category}</h1>
                 <h2 className={styles.h2}>Brand: <span className={styles.span}>{equipment.brand}</span></h2>
                 <h3 className={styles.h2}>Location: <span className={styles.span}>{equipment.location}</span></h3>
-                <p>Maintenance Date: {new Date(equipment.maintenanceDate).toLocaleDateString()}</p>
+                <p>Maintenance Date: {equipment.maintenanceDate.slice(0, 10)}</p>
 
                 <div>
                     <p>
-                        {equipment.author.username} posted on {new Date(equipment.createdAt).toLocaleDateString()}
+                        {equipment.author.username} posted on {equipment.createdAt.slice(0, 10)}
                     </p>
                     {equipment.author._id === user._id && (
                         <>
