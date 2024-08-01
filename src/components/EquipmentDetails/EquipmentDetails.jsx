@@ -31,7 +31,7 @@ const EquipmentDetails = (props) => {
 
                 <div>
                     <p>
-                        {equipment.author.username} posted on {new Date(equipment.createdAt).toLocaleDateString()}
+                        {equipment.author.username} posted on {equipment.createdAt.slice(0, 10)}
                     </p>
                     {equipment.author._id === user._id && (
                         <>

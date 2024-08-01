@@ -8,7 +8,7 @@ const EquipmentForm = (props) => {
         brand: '',
         category: 'ThermoCycler',
         location: 'L808-1',
-        maintenanceDate: '',
+        maintenanceDate: new Date().toLocaleDateString(),
     });
 
     const { equipmentId } = useParams();
@@ -27,7 +27,6 @@ const EquipmentForm = (props) => {
 
     const handleSubmit = (evt) => {
         evt.preventDefault();
-        console.log(formData);
         if (equipmentId) {
             props.handleUpdateEquipment(equipmentId, formData);
         } else {
@@ -83,7 +82,7 @@ const EquipmentForm = (props) => {
                     type="date"
                     name="maintenanceDate"
                     id="maintenanceDate"
-                    value={formData.maintenanceDate ? maintenanceDate.expirationDate.slice(0, 10) : new Date().toLocaleDateString()}
+                    value={formData.maintenanceDate.slice(0, 10)}
                     onChange={handleChange}
                 />
                 <button type="submit">SUBMIT</button>
