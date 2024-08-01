@@ -43,7 +43,7 @@ const ReagentDetails = (props) => {
                 <p>{reagent.category.toUpperCase()}</p>
                 <h2 className={styles.h2}>Brand: <span className={styles.span}>{reagent.brand}</span></h2>
                 <h2 className={styles.h2}>Quantity: <span className={styles.span}>{reagent.quantity}</span></h2>
-                <p>Expiration: {new Date(reagent.expirationDate).toLocaleDateString()}</p>
+                <p>Expiration: {reagent.expirationDate.slice(0, 10)}</p>
                 <div className={styles.div}>
                     <p className={styles.p}>
                         {reagent.author.username} posted on {new Date(reagent.createdAt).toLocaleDateString()}
