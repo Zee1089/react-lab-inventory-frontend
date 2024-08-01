@@ -17,9 +17,6 @@ const ReagentForm = (props) => {
     useEffect(() => {
         const fetchReagent = async () => {
             const reagentData = await reagentService.show(reagentId);
-            console.log(new Date(reagentData.expirationDate));
-            console.log(new Date(reagentData.expirationDate).toLocaleDateString().split('-').join(' '));
-            console.log(new Date(reagentData.expirationDate).toLocaleDateString().split('-'));
             setFormData(reagentData);
         };
         if (reagentId) fetchReagent();
