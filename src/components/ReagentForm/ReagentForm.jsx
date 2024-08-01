@@ -3,13 +3,13 @@ import { useParams } from 'react-router-dom';
 import * as reagentService from '../../services/reagentService';
 
 const ReagentForm = (props) => {
-
+    
     const [formData, setFormData] = useState({
         name: '',
         brand: '',
         quantity: 0,
         category: 'Organic',
-        expirationDate: '',
+        expirationDate: new Date().toLocaleDateString(),
     });
 
     const { reagentId } = useParams();
@@ -84,7 +84,7 @@ const ReagentForm = (props) => {
                     type="date"
                     name="expirationDate"
                     id="expirationDate"
-                    value={formData.expirationDate ? formData.expirationDate.slice(0, 10) : new Date().toLocaleDateString()}
+                    value={formData.expirationDate.slice(0, 10)}
                     onChange={handleChange}
                 />
                 <button type="submit">SUBMIT</button>
