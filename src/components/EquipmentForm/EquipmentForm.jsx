@@ -85,7 +85,6 @@ const EquipmentForm = (props) => {
                     type="date"
                     name="maintenanceDate"
                     id="maintenanceDate"
-                    // value={formData.maintenanceDate}
                     value={new Date(formData.maintenanceDate.split('-')).toLocaleDateString()}
                     onChange={handleChange}
                 />

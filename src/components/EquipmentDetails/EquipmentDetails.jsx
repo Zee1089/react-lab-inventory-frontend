@@ -1,5 +1,3 @@
-// src/components/equipmentDetails/equipmentDetails.jsx
-
 import { useParams } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import { AuthedUserContext } from '../../App';
