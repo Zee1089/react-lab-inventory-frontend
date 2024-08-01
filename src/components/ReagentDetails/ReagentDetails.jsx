@@ -1,5 +1,3 @@
-// src/components/reagentDetails/reagentDetails.jsx
-
 import { useParams } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import { AuthedUserContext } from '../../App';
@@ -31,7 +29,6 @@ const ReagentDetails = (props) => {
 
     const handleDeleteComment = async (reagentId, commentId) => {
         const deletedComment = await reagentService.deleteComment(reagentId, commentId);
-        console.log(deletedComment);
         const newCommentsArr = reagent.comments.filter((comment) => comment._id !== commentId);
         setReagent({ ...reagent, comments: newCommentsArr });
     };
@@ -44,11 +41,10 @@ const ReagentDetails = (props) => {
                 <p>{reagent.category.toUpperCase()}</p>
                 <h2>Brand: {reagent.brand}</h2>
                 <h2>Quantity: {reagent.quantity}</h2>
-                <p>Expiration: {new Date(reagent.expirationDate).toLocaleDateString()}</p> 
-                    {/* fixed error in property reference naming and used Date method to convert to more readable format */}
+                <p>Expiration: {reagent.expirationDate.slice(0, 10)}</p> 
                 <div>
                     <p>
-                        {reagent.author.username} posted on {new Date(reagent.createdAt).toLocaleDateString()}
+                        {reagent.author.username} posted on {new Date(reagent.createdAt).toLocaleDateString().slice(0, 10)}
                     </p>
                     {reagent.author._id === user._id && (
                         <>
@@ -72,8 +68,7 @@ const ReagentDetails = (props) => {
                         <header>
                             <div>
                                 <p>
-                                    {comment.author.username} posted on
-                                    {new Date(comment.createdAt).toLocaleDateString()}
+                                    {comment.author.username} posted on {new Date(comment.createdAt).toLocaleDateString()}
                                 </p>
                                 {comment.author._id === user._id && (
                                     <>

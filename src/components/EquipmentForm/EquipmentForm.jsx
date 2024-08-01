@@ -12,8 +12,6 @@ const EquipmentForm = (props) => {
     });
 
     const { equipmentId } = useParams();
-    console.log(formData);
-    console.log(equipmentId);
 
     useEffect(() => {
         const fetchEquipment = async () => {
@@ -85,8 +83,7 @@ const EquipmentForm = (props) => {
                     type="date"
                     name="maintenanceDate"
                     id="maintenanceDate"
-                    // value={formData.maintenanceDate}
-                    value={new Date(formData.maintenanceDate.split('-')).toLocaleDateString()}
+                    value={formData.maintenanceDate ? maintenanceDate.expirationDate.slice(0, 10) : new Date().toLocaleDateString()}
                     onChange={handleChange}
                 />
                 <button type="submit">SUBMIT</button>

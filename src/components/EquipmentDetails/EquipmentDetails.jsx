@@ -1,5 +1,3 @@
-// src/components/equipmentDetails/equipmentDetails.jsx
-
 import { useParams } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import { AuthedUserContext } from '../../App';
@@ -29,7 +27,7 @@ const EquipmentDetails = (props) => {
                 <h1>{equipment.category}</h1>
                 <h2>Brand: {equipment.brand}</h2>
                 <h3>Location: {equipment.location}</h3>
-                <p>Maintenance Date: {new Date(equipment.maintenanceDate).toLocaleDateString()}</p>
+                <p>Maintenance Date: {equipment.maintenanceDate.slice(0, 10)}</p>
 
                 <div>
                     <p>
