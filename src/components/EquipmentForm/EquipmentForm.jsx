@@ -27,7 +27,6 @@ const EquipmentForm = (props) => {
 
     const handleSubmit = (evt) => {
         evt.preventDefault();
-        console.log(formData);
         if (equipmentId) {
             props.handleUpdateEquipment(equipmentId, formData);
         } else {
