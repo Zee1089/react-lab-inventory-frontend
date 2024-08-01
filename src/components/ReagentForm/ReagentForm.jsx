@@ -28,7 +28,6 @@ const ReagentForm = (props) => {
 
     const handleSubmit = (evt) => {
         evt.preventDefault();
-        console.log(formData);
         if (reagentId) {
             props.handleUpdateReagent(reagentId, formData);
         } else {

@@ -44,7 +44,7 @@ const ReagentDetails = (props) => {
                 <p>Expiration: {reagent.expirationDate.slice(0, 10)}</p> 
                 <div>
                     <p>
-                        {reagent.author.username} posted on {new Date(reagent.createdAt).toLocaleDateString().slice(0, 10)}
+                        {reagent.author.username} posted on {reagent.createdAt.slice(0, 10)}
                     </p>
                     {reagent.author._id === user._id && (
                         <>
