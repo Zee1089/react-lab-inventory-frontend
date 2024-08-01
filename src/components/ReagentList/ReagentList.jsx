@@ -6,6 +6,8 @@ const ReagentList = (props) => {
     
     return (
         <main>
+            <h1 className='list-h1'>Reagents</h1>
+            <hr />
             {props.reagents.map((reagent) => (
                 <Link key={reagent._id} to={`/reagents/${reagent._id}`}>
                     <article>
