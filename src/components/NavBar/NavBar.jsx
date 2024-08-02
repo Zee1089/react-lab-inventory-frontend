@@ -14,11 +14,9 @@ const NavBar = ({ handleSignout }) => {
   return (
     <nav>
       <div className="title">
-        <span>My App</span>
+        <span>LabStocker</span>
       </div>
       <div className="menu" onClick={toggleMenu}>
-        <span></span>
-        <span></span>
         <span></span>
       </div>
       <ul className={menuOpen ? 'open' : ''}>
