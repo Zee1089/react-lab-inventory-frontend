@@ -11,9 +11,9 @@ const Dashboard = ({}) => {
   return (
     <>
     <div>
-    <NavLink to="/reagents" className={({ isActive }) => (isActive ? 'active' : '')}>
+    {/* <NavLink to="/reagents" className={({ isActive }) => (isActive ? 'active' : '')}>
         <img src={reagentLogo} className="logo reagent" alt="Reagent logo" />
-    </NavLink>
+    </NavLink> */}
     </div>
     <main>
       <h1>Welcome, {user.username}</h1>
