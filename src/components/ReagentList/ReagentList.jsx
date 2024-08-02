@@ -1,28 +1,25 @@
 import { Link } from 'react-router-dom';
 
 const ReagentList = (props) => {
+
     return (
         <main>
             <h1>Reagents</h1>
             <hr />
-            <ul> {/* Add an unordered list here */}
-                {props.reagents.map((reagent) => (
-                    <li key={reagent._id}> {/* Use a list item for each reagent */}
-                        <Link to={`/reagents/${reagent._id}`}>
-                            <article>
-                                <header>
-                                    <div>
-                                        <h3>{reagent.quantity} - {reagent.name}</h3>
-                                    </div>
-                                    <p>
-                                        {reagent.author ? reagent.author.username : '[ Unknown User ]'} posted on {new Date(reagent.createdAt).toLocaleDateString()}
-                                    </p>
-                                </header>
-                            </article>
-                        </Link>
-                    </li>
-                ))}
-            </ul>
+            {props.reagents.map((reagent) => (
+                <Link key={reagent._id} to={`/reagents/${reagent._id}`}>
+                    <article>
+                        <header>
+                            <div>
+                                <h2>{reagent.quantity}-{reagent.name}</h2>
+                            </div>
+                            <p>
+                                {reagent.author ? reagent.author.username : '[ Unknown User ]'} posted on {new Date(reagent.createdAt).toLocaleDateString()}
+                            </p>
+                        </header>
+                    </article>
+                </Link>
+            ))}
         </main>
     );
 };
