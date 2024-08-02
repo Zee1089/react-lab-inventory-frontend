@@ -1,21 +1,15 @@
-# React + Vite
+<img src="./public/logolS.jpg" alt="coding" width="140"/>
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+ ## Managing your lab stock
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-# Possible App Names: [ Erlenmeyer | Flask | Graduate ]  
-Lab Inventory System  
-Not spreadsheets, [ ...spread operator ]  
+The **LabStocker**, is a web application designed to help manage your reagents and equipment in the lab. It allows lab partners to maintain an inventory of their supplies and to share an inventory database. It also enable users to keep track of equippent maintenance. 
 
 ## Getting Started  
-[App link](<www.placeholder-app-link.com>)
+[Link to Deployed App](<https://labstocker.netlify.app/>)
 
 ## Attributions  
-- [Responsive Navbar in React using React Router | Beginner Tutorial](https://www.youtube.com/watch?v=17l6AOc8s10)
+- [Responsive Navbar in React using React Rou<img src="./public/images/notebookpic.png" alt="coding" width="200"/>
+ter | Beginner Tutorial](https://www.youtube.com/watch?v=17l6AOc8s10)
 
 ## Technologies Used  
 HTML  
@@ -28,3 +22,6 @@ MERN Stack:
 - Node
 
 ## Next Steps  
+
+Next steps would be to implement a Team chat and
+add new features that need to be tracked.

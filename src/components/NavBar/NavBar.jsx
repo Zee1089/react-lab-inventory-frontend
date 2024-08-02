@@ -14,7 +14,7 @@ const NavBar = ({ handleSignout }) => {
   return (
     <nav>
       <div className="title">
-        <span>LabStocker</span>
+        <span>LabStocker </span>
       </div>
       <div className="menu" onClick={toggleMenu}>
         <span></span>
