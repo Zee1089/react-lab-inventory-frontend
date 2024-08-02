@@ -1,31 +1,27 @@
 import { Link } from 'react-router-dom';
-import React from 'react';
-import './ReagentList.css';  // Import the CSS file here
 
 const ReagentList = (props) => {
+
     return (
         <main>
             <h1>Reagents</h1>
             <hr />
-            <ul>
-                {props.reagents.map((reagent) => (
-                    <li key={reagent._id}>
-                        <Link to={`/reagents/${reagent._id}`}>
-                            <article>
-                                <header>
-                                    <h3>{reagent.quantity} - {reagent.name}</h3>
-                                    <p>
-                                        {reagent.author ? reagent.author.username : '[ Unknown User ]'} posted on {new Date(reagent.createdAt).toLocaleDateString()}
-                                    </p>
-                                </header>
-                            </article>
-                        </Link>
-                    </li>
-                ))}
-            </ul>
+            {props.reagents.map((reagent) => (
+                <Link key={reagent._id} to={`/reagents/${reagent._id}`}>
+                    <article>
+                        <header>
+                            <div>
+                                <h4>{reagent.quantity} </h4>- <h3> {reagent.name}</h3>
+                            </div>
+                            <p>
+                                {reagent.author ? reagent.author.username : '[ Unknown User ]'} posted on {new Date(reagent.createdAt).toLocaleDateString()}
+                            </p>
+                        </header>
+                    </article>
+                </Link>
+            ))}
         </main>
     );
 };
-
 
 export default ReagentList;
