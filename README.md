@@ -9,7 +9,8 @@ The **LabStocker**, is a web application designed to help manage your reagents a
 
 ## Attributions  
 - [Responsive Navbar in React using React Rou<img src="./public/images/notebookpic.png" alt="coding" width="200"/>
-ter | Beginner Tutorial](https://www.youtube.com/watch?v=17l6AOc8s10)
+[Responsive Navbar in React using React Router](https://www.youtube.com/watch?v=17l6AOc8s10)
+[fontawsome-menu bar](https://fontawesome.com/v4/icons/)
 
 ## Technologies Used  
 HTML  
