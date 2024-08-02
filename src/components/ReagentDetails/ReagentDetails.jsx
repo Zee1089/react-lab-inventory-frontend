@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import { AuthedUserContext } from '../../App';
 import { useState, useEffect, useContext } from 'react';
 import * as reagentService from '../../services/reagentService';
+import './ReagentDetails.css';
+
 
 import CommentForm from '../CommentForm/CommentForm';
 

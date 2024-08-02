@@ -1,7 +1,7 @@
 import { AuthedUserContext } from '../../App';
 import { useContext } from 'react';
-import reagentLogo from '.components/assets/reagents.svg'
-import equipmentLogo from './assets/equipment.svg'
+// import reagentLogo from './assets/reagents.svg'
+// import equipmentLogo from './assets/equipment.svg'
 import './Dashboard.css'
 import { NavLink } from 'react-router-dom';
 
