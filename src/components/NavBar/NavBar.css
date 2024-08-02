@@ -9,6 +9,11 @@ nav {
     width: 100vw;
     padding: 0 3rem;
     overflow: scroll;
+    overflow-x: hidden;
+}
+
+main {
+    margin-top: 60px; /* Adjust to the height of the navbar */
 }
 
 nav .title {
@@ -50,7 +55,7 @@ nav .menu {
     display: none;
     position: absolute;
     top: 0.75rem;
-    right: 0.5rem;
+    right: 3.5rem;
     flex-direction: column;
     justify-content: space-between;
     width: 2.25rem;
@@ -69,6 +74,7 @@ nav .menu span {
     nav {
         flex-direction: column;
         align-items: flex-start;
+        padding: 0 1.5rem;
     }
 
     nav ul {
