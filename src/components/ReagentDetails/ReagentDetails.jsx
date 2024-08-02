@@ -5,7 +5,6 @@ import { useState, useEffect, useContext } from 'react';
 import * as reagentService from '../../services/reagentService';
 import './ReagentDetails.css';
 
-
 import CommentForm from '../CommentForm/CommentForm';
 
 const ReagentDetails = (props) => {
@@ -37,21 +36,21 @@ const ReagentDetails = (props) => {
 
     if (!reagent) return <main>Loading...</main>;
     return (
-        <main>
-            <header>
-                <h1>{reagent.name}</h1>
-                <p>{reagent.category.toUpperCase()}</p>
-                <h2>Brand: {reagent.brand}</h2>
-                <h2>Quantity: {reagent.quantity}</h2>
-                <p>Expiration: {reagent.expirationDate.slice(0, 10)}</p> 
-                <div>
+        <main className="reagent-details">
+            <header className="reagent-header">
+                <h1 className="reagent-name">{reagent.name}</h1>
+                <p className="reagent-category">{reagent.category.toUpperCase()}</p>
+                <h2 className="reagent-brand">Brand: {reagent.brand}</h2>
+                <h2 className="reagent-quantity">Quantity: {reagent.quantity}</h2>
+                <p className="reagent-expiration">Expiration: {reagent.expirationDate.slice(0, 10)}</p> 
+                <div className="reagent-author">
                     <p>
                         {reagent.author.username} posted on {reagent.createdAt.slice(0, 10)}
                     </p>
                     {reagent.author._id === user._id && (
                         <>
-                            <Link to={`/reagents/${reagentId}/edit`}>Edit</Link>
-                            <button onClick={() => props.handleDeleteReagent(reagentId)}>
+                            <Link to={`/reagents/${reagentId}/edit`} className="edit-link">Edit</Link>
+                            <button className="delete-button" onClick={() => props.handleDeleteReagent(reagentId)}>
                                 Delete
                             </button>
                         </>
@@ -60,29 +59,29 @@ const ReagentDetails = (props) => {
 
             </header>
 
-            <section>
+            <section className="reagent-comments-section">
                 <h2>Comments</h2>
 
                 {!reagent.comments.length && <p>There are no comments.</p>}
 
                 {reagent.comments.map((comment) => (
-                    <article key={comment._id}>
-                        <header>
+                    <article key={comment._id} className="reagent-comment">
+                        <header className="comment-header">
                             <div>
                                 <p>
                                     {comment.author.username} posted on {new Date(comment.createdAt).toLocaleDateString()}
                                 </p>
                                 {comment.author._id === user._id && (
                                     <>
-                                        <Link to={`/reagents/${reagentId}/comments/${comment._id}/edit`}>Edit</Link>
-                                        <button onClick={() => handleDeleteComment(reagentId, comment._id)}>
+                                        <Link to={`/reagents/${reagentId}/comments/${comment._id}/edit`} className="edit-link">Edit</Link>
+                                        <button className="delete-button" onClick={() => handleDeleteComment(reagentId, comment._id)}>
                                             Delete
                                         </button>
                                     </>
                                 )}
                             </div>
                         </header>
-                        <p>{comment.text}</p>
+                        <p className="comment-text">{comment.text}</p>
                     </article>
                 ))}
             </section>

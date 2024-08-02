@@ -1,65 +1,63 @@
-/* main {
-    margin: 0 auto;
-    padding: 20px;
+.reagent-details {
     max-width: 800px;
+    margin: 0 auto; /* Centering the container */
+    padding: 15px;
+    text-align: left;
     background-color: #f9f9f9;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-} */
+}
 
-/* header {
+/* Header styles for reagent details */
+.reagent-header {
     border-bottom: 2px solid #ddd;
     padding-bottom: 15px;
     margin-bottom: 20px;
 }
 
-header h1 {
+.reagent-name {
     font-size: 2em;
-    color: #333;
+    color: grey;
     margin-bottom: 10px;
 }
 
-header h2 {
+.reagent-category {
+    color: grey; 
+}
+
+.reagent-brand,
+.reagent-quantity {
     font-size: 1.2em;
     color: #666;
     margin-bottom: 5px;
 }
 
-header p {
+.reagent-expiration {
     color: #888;
     font-size: 0.9em;
 }
 
-section h2 {
-    font-size: 1.5em;
-    color: #333;
-    margin-top: 30px;
-    margin-bottom: 15px;
-}
-
-article {
-    background-color: #fff;
-    border-radius: 5px;
-    padding: 15px;
-    margin-bottom: 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-article header {
-    margin-bottom: 10px;
-}
-
-article header p {
+.reagent-author p {
+    margin: 10px 0 0;
+    color: black;
     font-size: 0.9em;
-    color: #666;
 }
 
-article p {
-    font-size: 1em;
-    color: #444;
+/* Link styles */
+.edit-link {
+    text-decoration: none;
+    color: #007bff;
+    font-weight: bold;
+    transition: color 0.3s ease;
+    margin-right: 10px;
 }
 
-button {
+.edit-link:hover {
+    color: #0056b3;
+}
+
+/* Button styles */
+.delete-button {
     background-color: #007bff;
     color: white;
     border: none;
@@ -71,40 +69,34 @@ button {
     transition: background-color 0.3s ease;
 }
 
-button:hover {
+.delete-button:hover {
     background-color: #0056b3;
 }
 
-a {
-    text-decoration: none;
-    color: #007bff;
-    font-weight: bold;
-    transition: color 0.3s ease;
-    margin-right: 10px;
-}
-
-a:hover {
-    color: #0056b3;
-}
-
-.comment-form {
+/* Comment section styles */
+.reagent-comments-section {
     margin-top: 20px;
 }
 
-.comment-form input[type="text"],
-.comment-form textarea {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 10px;
+.reagent-comment {
+    background-color: #fff;
     border-radius: 5px;
-    border: 1px solid #ddd;
+    padding: 15px;
+    margin-bottom: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s;
+}
+
+.reagent-comment:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.comment-header p {
+    font-size: 0.9em;
+    color: #666;
+}
+
+.comment-text {
     font-size: 1em;
+    color: #444;
 }
-
-.comment-form button {
-    background-color: #28a745;
-}
-
-.comment-form button:hover {
-    background-color: #218838;
-} */
