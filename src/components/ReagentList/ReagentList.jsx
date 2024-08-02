@@ -11,7 +11,7 @@ const ReagentList = (props) => {
                     <article>
                         <header>
                             <div>
-                                <h4>{reagent.quantity} </h4>- <h3> {reagent.name}</h3>
+                                <h3> {reagent.quantity} {reagent.name}</h3>
                             </div>
                             <p>
                                 {reagent.author ? reagent.author.username : '[ Unknown User ]'} posted on {new Date(reagent.createdAt).toLocaleDateString()}
