@@ -2,12 +2,11 @@ main {
     max-width: 800px;
     margin: 0 auto; /* Centering the container on the page */
     padding: 15px;
-    font-family: Arial, sans-serif;
 }
 
 h1 {
     text-align: left;
-    color: black; /* Missing semicolon added */
+    color: black; 
 }
 
 hr {
@@ -41,7 +40,7 @@ article:hover {
 header h3 {
     margin: 0;
     color: purple;
-    font-size: 1em; /* Removed the period after the number */
+    font-size: 1em; 
 }
 
 p {
