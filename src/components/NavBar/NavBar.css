@@ -1,15 +1,14 @@
-/* NavBar.css */
-
 nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #5880dc;
+    background-color: pink;
     color: white;
     position: sticky;
     top: 0;
     width: 100vw;
     padding: 0 3rem;
+    overflow: scroll;
 }
 
 nav .title {

@@ -5,7 +5,6 @@ import equipmentLogo from '../../assets/equipment.svg'
 import './Dashboard.css'
 import { NavLink } from 'react-router-dom';
 
-
 const Dashboard = ({}) => {
   const user = useContext(AuthedUserContext);
   return (
