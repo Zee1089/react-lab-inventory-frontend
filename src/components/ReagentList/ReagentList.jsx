@@ -1,4 +1,6 @@
 import { Link } from 'react-router-dom';
+import React from 'react';
+import './ReagentList.css';  // Import the CSS file here
 
 const ReagentList = (props) => {
     return (
@@ -24,5 +26,6 @@ const ReagentList = (props) => {
         </main>
     );
 };
+
 
 export default ReagentList;
