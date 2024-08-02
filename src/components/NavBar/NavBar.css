@@ -6,10 +6,10 @@ nav {
     color: white;
     position: sticky;
     top: 0;
-    width: 100vw;
+    width: 100%;
+    max-width: 100%;
     padding: 0 3rem;
-    overflow: scroll;
-    overflow-x: hidden;
+    box-sizing: border-box; /* Include padding and borders in width */
 }
 
 main {
@@ -100,6 +100,6 @@ nav .menu span {
 
     nav .menu {
         display: flex;
-        right: 3rem;
+        right: 1.5rem;
     }
 }
