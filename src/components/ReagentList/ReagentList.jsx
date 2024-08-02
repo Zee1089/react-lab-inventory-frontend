@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import '/.ReagentList.css'
+import './ReagentList.css'
 
 
 const ReagentList = (props) => {
