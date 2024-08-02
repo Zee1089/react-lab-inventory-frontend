@@ -1,13 +1,13 @@
-main {
+/* main {
     margin: 0 auto;
     padding: 20px;
     max-width: 800px;
     background-color: #f9f9f9;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
+} */
 
-header {
+/* header {
     border-bottom: 2px solid #ddd;
     padding-bottom: 15px;
     margin-bottom: 20px;
@@ -107,4 +107,4 @@ a:hover {
 
 .comment-form button:hover {
     background-color: #218838;
-}
+} */
