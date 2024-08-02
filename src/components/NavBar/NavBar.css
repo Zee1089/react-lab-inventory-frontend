@@ -8,11 +8,11 @@ nav {
     color: white;
     position: sticky;
     top: 0;
-    width: 100vw;
+    max-width: 100dvw;
     padding: 0 3rem;
 }
 
-nav .title {
+nav.title {
     font-size: 1.5rem;
     margin: 1rem;
     font-weight: bold;
@@ -20,13 +20,23 @@ nav .title {
     color: white;
 }
 
+div.title {
+    margin: .5rem 0;
+}
+
 nav ul {
     display: flex;
+    justify-content: center;
+    align-items: center;
     margin: 0;
     padding: 0;
 }
 
-nav ul li {
+li {
+    color: black;
+}
+
+nav > ul > li {
     list-style: none;
 }
 
