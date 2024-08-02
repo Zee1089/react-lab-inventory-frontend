@@ -2,11 +2,12 @@ main {
     max-width: 800px;
     margin: 0 auto; /* Centering the container on the page */
     padding: 15px;
+    text-align: left;
 }
 
 h1 {
     text-align: left;
-    color: black; 
+    color: grey; 
 }
 
 hr {
@@ -18,10 +19,12 @@ hr {
 ul {
     list-style-type: disc;
     padding-left: 20px;
+    text-align: left;
 }
 
 li {
     margin-bottom: 20px;
+    padding-left: 10px;
 }
 
 article {

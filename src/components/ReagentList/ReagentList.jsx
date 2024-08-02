@@ -4,7 +4,7 @@ import './ReagentList.css';
 const ReagentList = (props) => {
     return (
         <main>
-            <h1>Reagents</h1>
+            <h2>Reagents</h2>
             <hr />
             <ul>
                 {props.reagents.map((reagent) => (
@@ -13,8 +13,8 @@ const ReagentList = (props) => {
                             <article>
                                 <header>
                                     <div>
-                                        <h3 className="reagent-name">
-                                            {reagent.quantity} {reagent.name}
+                                        <h3 >
+                                            {reagent.name}
                                         </h3>
                                     </div>
                                     <p className="reagent-details">
