@@ -34,9 +34,10 @@ nav ul {
 
 li {
     color: black;
+    list-style: none;
 }
 
-nav > ul > li {
+nav>ul>li {
     list-style: none;
 }
 
@@ -69,7 +70,7 @@ nav .menu {
     cursor: pointer;
 }
 
-nav .menu span {
+nav.menu > span {
     height: 0.4rem;
     width: 100%;
     background-color: #fff;
