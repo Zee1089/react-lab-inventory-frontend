@@ -10,11 +10,11 @@ const Dashboard = ({}) => {
   const user = useContext(AuthedUserContext);
   return (
     <>
-    {/* <div>
+    <div>
     <NavLink to="/reagents" className={({ isActive }) => (isActive ? 'active' : '')}>
         <img src={reagentLogo} className="logo reagent" alt="Reagent logo" />
     </NavLink>
-    </div> */}
+    </div>
     <main>
       <h1>Welcome, {user.username}</h1>
       <p>
